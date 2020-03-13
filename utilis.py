@@ -24,3 +24,21 @@ def iteration_jeu(Z):
             elif Z[x][y] == 0 and N[x][y] == 3:
                 Z[x][y] = 1
 return Z
+    ####################################################
+    
+    def iteration_jeu_np(Z): 
+   
+    
+    forme = len(Z), len(Z[0]) 
+    Z = np.array(Z) # On travaille cette fois avec des array
+    N = calcul_nb_voisins_np(Z) # On utilise cette fois calcul_nb_voisins_np
+    for x in range(1, forme[0]-1): 
+        for y in range(1, forme[1]-1): 
+            if Z[x][y] == 1 and (N[x][y] < 2 or N[x][y] > 3): 
+                Z[x][y] = 0 
+            elif Z[x][y] == 0 and N[x][y] == 3: 
+                Z[x][y] = 1 
+    return Z
+        ####################################################################################
+    
+    
